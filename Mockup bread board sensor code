@@ -1,0 +1,110 @@
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+#include <DHT.h> // took me a while to realize i needed this library for the sensor 
+
+// --- OLED 
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+#define OLED_RESET    -1
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+
+// --- DHT11 
+#define DHTPIN 4
+#define DHTTYPE DHT11
+DHT dht(DHTPIN, DHTTYPE);
+
+// --- Buzzer 
+#define BUZZER_PIN 23
+
+// --- System
+const float TEMP_THRESHOLD = 28.0; // Set  alarm temperature
+
+// --- Timing
+unsigned long previousDhtMillis = 0;
+const long dhtInterval = 2000; 
+
+float currentTemp = 0.0;
+float currentHum = 0.0;
+
+void setup() {
+  Serial.begin(115200);
+
+  // Initialize Buzzer
+  pinMode(BUZZER_PIN, OUTPUT);
+  digitalWrite(BUZZER_PIN, LOW); 
+
+  // Initialize DHT
+  dht.begin();
+
+  // Initialize OLED 
+  if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { 
+    Serial.println(F("SSD1306 allocation failed"));
+    for(;;); 
+  }
+  
+  // Show startup screen
+  display.clearDisplay();
+  display.setTextColor(SSD1306_WHITE);
+  display.setTextSize(1);
+  display.setCursor(0, 20);
+  display.println("System Initializing...");
+  display.display();
+  delay(2000); 
+}
+
+void loop() {
+  unsigned long currentMillis = millis();
+
+  //
+  if (currentMillis - previousDhtMillis >= dhtInterval) {
+    previousDhtMillis = currentMillis;
+    
+    
+    float t = dht.readTemperature();
+    float h = dht.readHumidity();
+
+
+    if (!isnan(t) && !isnan(h)) {
+      currentTemp = t;
+      currentHum = h;
+    } else {
+      Serial.println(F("Failed to read from DHT sensor!"));
+    }
+  }
+
+  // 2. Prepare Display Data
+  display.clearDisplay();
+  display.setCursor(0, 10);
+  
+  display.setTextSize(2);
+  display.print("T: ");
+  display.print(currentTemp);
+  display.println(" C");
+  
+  display.setCursor(0, 40);
+  display.print("H: ");
+  display.print(currentHum);
+  display.println(" %");
+
+  //  Alarm Logic
+  if (currentTemp >= TEMP_THRESHOLD) {
+    // Turn on the buzzer
+    digitalWrite(BUZZER_PIN, HIGH);
+    
+    
+    if ((currentMillis / 500) % 2 == 0) {
+      display.invertDisplay(true);
+    } else {
+      display.invertDisplay(false);
+    }
+  } else {
+
+    digitalWrite(BUZZER_PIN, LOW);
+    display.invertDisplay(false);
+  }
+
+  // Push the prepared data to the screen
+  display.display();
+}
+
