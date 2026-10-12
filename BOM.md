@@ -20,7 +20,7 @@
 | [Pcb](https://cart.jlcpcb.com/quote?stencilLayer=1&stencilWidth=10&stencilLength=10&stencilCounts=5&plateType=1&spm=Jlcpcb.Homepage.1010) | It is the pcb | 1 | $2.00 | $2.00 | [jlcpcb](https://cart.jlcpcb.com/quote?stencilLayer=1&stencilWidth=10&stencilLength=10&stencilCounts=5&plateType=1&spm=Jlcpcb.Homepage.1010) |
 | [5v battery](https://www.aliexpress.us/item/3256812417212471.html?spm=a2g0o.productlist.main.1.61b48659lfh3MM&algo_pvid=0fc453ae-f4bc-4849-8f7a-6d056766d2b2&algo_exp_id=0fc453ae-f4bc-4849-8f7a-6d056766d2b2-0&pdp_ext_f=%7B%22order%22%3A%2282%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21USD%2127.11%215.94%21%21%21180.61%2139.59%21%402103119c17917701721224116e1183%2112000058843060199%21sea%21US%218284577608%21ABX%211%210%21n_tag%3A-29910%3Bd%3A6d4013ab%3Bm03_new_user%3A-29895%3BpisId%3A5000000218165380&curPageLogUid=ybg2VPKMtiyH&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005012603527223%7C_p_origin_prod%3A) | to power | 1 | $12.75 | $12.75 | [Aliexpress](https://www.aliexpress.us/item/3256812417212471.html?spm=a2g0o.productlist.main.1.61b48659lfh3MM&algo_pvid=0fc453ae-f4bc-4849-8f7a-6d056766d2b2&algo_exp_id=0fc453ae-f4bc-4849-8f7a-6d056766d2b2-0&pdp_ext_f=%7B%22order%22%3A%2282%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21USD%2127.11%215.94%21%21%21180.61%2139.59%21%402103119c17917701721224116e1183%2112000058843060199%21sea%21US%218284577608%21ABX%211%210%21n_tag%3A-29910%3Bd%3A6d4013ab%3Bm03_new_user%3A-29895%3BpisId%3A5000000218165380&curPageLogUid=ybg2VPKMtiyH&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005012603527223%7C_p_origin_prod%3A) |
 | **Parts subtotal** | — | — | — | **$24.48** | — |
-| **Tax & shipping** | — | — | — | **$6.77** | — |
-| **Total** | — | — | — | **$31.25** | — |
+| **Tax & shipping** | — | — | — | **$5.42** | — |
+| **Total** | — | — | — | **$29.90** | — |
 
-**$1.25 over the tier's funding.** Every tier gives a fixed amount for parts, so this needs cutting back or a higher tier.
+$0.10 left of the tier's funding.
